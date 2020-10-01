@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!!!!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %} <link rel="stylesheet" href="https://bootswatch.com/4/sandstone/bootstrap.min.css" >{% endblock %}
     </head>
     <body>
 {# :: elemnt qui ne bouge jamais on les mais en dehors du block :: #}
-<header style="height: 200px; background-color:orange;">
+<header style="mon jeader">
 </header>
 <nav>
 <ul>
@@ -19,6 +19,7 @@
     <li><a href="{{ path("hero",{"name":"batman" , "age":38}) }}">hero</a></li>
      <li><a href="{{ path("heroes") }}">heroes</a></li>
       <li><a href="{{ path("variable") }}">demo-de-variable</a></li>
+        <li><a href="{{ path("req") }}">l'objet-request</a></li>
 </ul>
 </nav>
 
@@ -31,3 +32,41 @@
         {% block javascripts %}{% endblock %}
     </body>
 </html>
+
+
+
+    {# <body>
+    <header style="">Mon header</header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor02">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('page_1') }}">pageOne</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('page_2') }}">pageTwo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('page_3') }}">pageThree</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('page_4') }}">pageFour</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('article') }}">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('hero') }}">Héros</a>
+                </li>
+            </ul>
+        </div>
+    </nav> #} #}

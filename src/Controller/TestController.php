@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 
@@ -97,7 +98,22 @@ class TestController extends AbstractController
      */
     public function variable()
     {
-        
+
         return $this->render('pages/variable.html.twig');
+    }
+         /**
+     * @Route ("/req", name="req")
+     */
+    public function req(Request $request)
+    {
+// pour recuper une requete
+    $number = $request->get("number");
+    $letter = $request->get("letter");
+        
+        return $this->render('pages/req.html.twig', [
+            "request"=> $request,
+            "number"=> $number,
+            "letter"=> $letter
+        ]);
     }
 }
