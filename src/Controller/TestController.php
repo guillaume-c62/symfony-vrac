@@ -92,4 +92,12 @@ class TestController extends AbstractController
             "hero" => $hero
         ]);
     }
+      /**
+     * @Route ("/variable", name="variable")
+     */
+    public function variable()
+    {
+        
+        return $this->render('pages/variable.html.twig');
+    }
 }

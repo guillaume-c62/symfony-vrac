@@ -1,0 +1,15 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+<h1>les variables </h1>
+{# pour mettre deux variables #}
+{% set variable, var = "son contenu","c'est cool"  %}
+{# faire une concatenation dans twig altgr +2 pour faire le petit signe #}
+
+<h2>Ma variable contient:"{{ variable ~"  "~ var }}"</h2>
+{# ici c'est une variable qui n'existe pas on va l'afficher #}
+{% if existepas is defined %}
+    <h2>{{ existepas }}</h2>
+{% endif %}
+
+ {% endblock %}
