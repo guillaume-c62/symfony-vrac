@@ -1,0 +1,27 @@
+{% extends 'base.html.twig'%}
+
+{% block body %}
+
+<h1>liste des heros</h1>
+
+<ul>
+    {# boucle tableau numeroté #}
+    {% for name in names  %}
+    {% if loop.index is odd %}
+    {% else %}
+  <li style="background-color: red; ">{{ name }}</li>
+
+     <li>{{ name }}</li>
+  
+   {% endif %}
+    <li>liste vide</li>    
+  {% endfor %}
+       {% for key, value in hero %}
+    <li>{{ key }}: {{ value }} - {{ loop.index0 }}</li>
+  {% endfor %}
+</ul>
+
+<h2>liste des heros</h2>
+<p>{{ hero.name | upper}} agé de {{ hero.age }} et mesure {{hero.size | number_format(2, '.', ',')}}</p>
+ {% endblock %}
+ {# mettre |raw poour eviter les securite cela cree des faille de securite #}

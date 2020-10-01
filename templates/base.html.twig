@@ -2,11 +2,31 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Welcome!!!!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+{# :: elemnt qui ne bouge jamais on les mais en dehors du block :: #}
+<header style="height: 200px; background-color:orange;">
+</header>
+<nav>
+<ul>
+    <li><a href="{{ path("homepage") }}">Home</a></li>
+    <li><a href="{{ path("page_one") }}">page-1</a></li>
+    <li><a href="{{ path("page_Two") }}">page-2</a></li>
+    <li><a href="{{ path("page_Three") }}">page-3</a></li>
+    <li><a href="{{ path("page_Four") }}">page-4</a></li>
+    <li><a href="{{ path("hero",{"name":"batman" , "age":38}) }}">hero</a></li>
+     <li><a href="{{ path("heroes") }}">heroes</a></li>
+</ul>
+</nav>
+
+        {% block body %}
+        <h1> welcome to name page "PAGE" </h1>
+        {% endblock %}
+
+
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
